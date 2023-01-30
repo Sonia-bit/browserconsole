@@ -21,4 +21,4 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
       - name: Integration Tests
-        run: dotnet run browserconsole/Program.cs
+        run: dotnet run --project/browserconsole/browserconsole.csproj
