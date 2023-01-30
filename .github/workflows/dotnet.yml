@@ -19,7 +19,12 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 3.x
+    - name: 'BrowserStack Env Setup'  # Invokes the setup-env action
+      uses: browserstack/github-actions/setup-env@master
+      with:
+          username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+          access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
